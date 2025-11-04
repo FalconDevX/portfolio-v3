@@ -3,8 +3,9 @@ import { useEffect, useRef } from "react";
 
 export default function FloatingDots() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    let currentColor = "rgba(255,255,255,0.4)";
-    let nextColor = "rgba(219,39,119,0.4)";
+    let whiteColor = "rgba(255,255,255,0.4)";
+    let pinkColor = "rgba(219,39,119,0.4)";
+    let yellowColor = "rgba(252, 211, 77,0.4)";
 
     useEffect(() => {
         const canvas = canvasRef.current!;
@@ -15,23 +16,28 @@ export default function FloatingDots() {
 
         // creating 250 dot array
         const dots = Array.from({ length: 250 }, () => {
-            let vx = (Math.random() - 0.5) * 0.8;
-            let vy = (Math.random() - 0.5) * 0.8;
-            
-  
-            
+            let vx, vy;
+
+            do {
+                vx = (Math.random() - 0.5) * 0.8;
+            } while (Math.abs(vx) < 0.1);
+
+            do {
+                vy = (Math.random() - 0.5) * 0.8;
+            } while (Math.abs(vy) < 0.1);
+
             //dot position
             return {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 //dot size
-                r: Math.random() * 4 + 1,
+                r: Math.random() * 3 + 2,
                 //dot speed 
                 vx,
                 vy,
                 color: "rgba(255,255,255,0.4)"
             }
-            
+
         });
 
 
@@ -95,20 +101,34 @@ export default function FloatingDots() {
                         d2.y += Math.sin(angle) * overlap / 2;
 
                         //change dot colors after collision
-                        d1.color = currentColor;
-                        d2.color = currentColor;
+                        // d1.color = currentColor;
+                        // d2.color = currentColor;
+                        if (d1.color === whiteColor && d2.color === whiteColor) {
+                            d1.color = pinkColor;
+                            d2.color = pinkColor;
+                        }
+                        else if (d1.color === pinkColor && d2.color === pinkColor) {
+                            d1.color = yellowColor;
+                            d2.color = yellowColor;
+                        }
+                        else if (d1.color === yellowColor && d2.color === yellowColor) {
+                            d1.color = whiteColor;
+                            d2.color = whiteColor;
+                        }
                     }
                 }
 
 
             }
-            let allSame = dots.every(d => d.color === dots[0].color);
 
-            if (allSame) {
-                const temp = currentColor;
-                currentColor = nextColor;
-                nextColor = temp;
-            }
+
+            // let allSame = dots.every(d => d.color === dots[0].color);
+
+            // if (allSame) {
+            //     const temp = currentColor;
+            //     currentColor = nextColor;
+            //     nextColor = temp;
+            // }
 
 
             //run animation
