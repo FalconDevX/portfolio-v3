@@ -21,7 +21,7 @@ const Skills = () => {
                 Skills
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600"></span>
             </h1>
-            <p className="text-gray-400 max-w-[50%] leading-relaxed mt-5">
+            <p className="text-gray-400 leading-relaxed mt-5 max-w-[90%] md:max-w-[70%] lg:max-w-[50%]">
                 Backend-focused developer experienced in Python (Django, Flask) with both SQL (MySQL) and NoSQL (MongoDB) databases. Familiar with React and TypeScript. Now shifting my career path toward data science and machine learning.
             </p>
             <motion.div

@@ -5,9 +5,9 @@ import Navabar from './Navabar';
 const Welcome = () => {
     return (
         <section className="min-h-screen flex items-center justify-center bg-transparent text-white px-8">
-            <div className="max-w-6xl w-full flex flex-row justify-center gap-14">
+            <div className="w-full flex flex-row justify-center gap-14">
                 {/* Left Side */}
-                <div className="flex justify-center p-0">
+                <div className="hidden lg:flex justify-center p-0">
                     <img
                         src="portfolio-photo.jpg"
                         alt="portfolio"
@@ -29,19 +29,21 @@ const Welcome = () => {
                         software developer
                     </h2>
 
-                    <p className="text-gray-400 max-w-md leading-relaxed">
-                        Python developer with 2 years of experience in backend development, AI automation, and e-commerce web projects.
+                    <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
+                        Python developer with 2 years of experience in backend development, AI automation, and <span className="whitespace-nowrap">e-commerce</span> web projects.
                     </p>
 
                     <div className="flex space-x-6 text-3xl mt-2">
                         <a
-                            href="#"
+                            href="https://github.com/FalconDevX"
+                            target="_blank"
                             className="text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
                         >
                             <Github stroke="none" fill="currentColor" strokeWidth={1.5} />
                         </a>
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/in/mateusz-nowaczek-781779297/"
+                            target="_blank"
                             className="text-gray-400 hover:text-orange-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.5)]"
                         >
                             <Linkedin strokeWidth={1.5} />

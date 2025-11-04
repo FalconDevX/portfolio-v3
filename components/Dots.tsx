@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function FloatingDots() {
+export default function Dots() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     let whiteColor = "rgba(255,255,255,0.4)";
     let pinkColor = "rgba(219,39,119,0.4)";

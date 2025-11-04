@@ -11,7 +11,7 @@ const Projects = () => {
                 </h1>
             </Reveal>
 
-            <div className="flex flex-row gap-10 items-stretch flex-wrap ">
+            <div className="flex flex-row flex-wrap justify-center gap-10">
                 <Reveal delay={0.2}>
                     <ProjectCard
                         title="RenderX - GPU ecomerce"
