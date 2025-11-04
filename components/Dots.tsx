@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 
 export default function FloatingDots() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    let currentColor = "rgba(255,255,255,0.4)";
+    let nextColor = "rgba(219,39,119,0.4)";
 
     useEffect(() => {
         const canvas = canvasRef.current!;
@@ -12,21 +14,27 @@ export default function FloatingDots() {
         canvas.height = window.innerHeight;
 
         // creating 250 dot array
-        const dots = Array.from({ length: 250 }, () => ({
+        const dots = Array.from({ length: 250 }, () => {
+            let vx = (Math.random() - 0.5) * 0.8;
+            let vy = (Math.random() - 0.5) * 0.8;
+            
+  
+            
             //dot position
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            //dot size
-            r: Math.random() * 4 + 1,
-            //dot speed 
-            vx: (Math.random() - 0.5) * 0.8,
-            vy: (Math.random() - 0.5) * 0.8,
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                //dot size
+                r: Math.random() * 4 + 1,
+                //dot speed 
+                vx,
+                vy,
+                color: "rgba(255,255,255,0.4)"
+            }
+            
+        });
 
-            color: "rgba(255,255,255,0.8)"
-        }));
 
-        let currentColor = "rgba(255,255,255,0.8)";
-        let nextColor = "rgba(219,39,119,0.8)";
 
         //drawing function clear everything before iteration
         const draw = () => {
@@ -92,7 +100,7 @@ export default function FloatingDots() {
                     }
                 }
 
-                
+
             }
             let allSame = dots.every(d => d.color === dots[0].color);
 
