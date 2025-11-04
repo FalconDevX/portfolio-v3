@@ -17,7 +17,7 @@ export default function FloatingDots() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             //dot size
-            r: Math.random() * 2 + 1,
+            r: Math.random() * 4 + 1,
             //dot speed 
             vx: (Math.random() - 0.5) * 0.25,
             vy: (Math.random() - 0.5) * 0.25
@@ -30,7 +30,7 @@ export default function FloatingDots() {
             dots.forEach(d => {
                 d.x += d.vx;
                 d.y += d.vy;
-                
+
                 //teleport dot to the other side of tghe screen
                 if (d.x < 0) d.x = canvas.width;
                 if (d.x > canvas.width) d.x = 0;
@@ -45,25 +45,40 @@ export default function FloatingDots() {
                 ctx.fill();
             });
 
-            for(let i = 0; i>dots.length; i++)
-            {
-                //avoid checking same dots pair twice
-                for(let j = i + 1; j < dots.length; j++)
-                {
-                    const d1 = dots[i]
-                    const d2 = dots[j]
-                    const dx = d2.x - d1.x
-                    const dy = d2.y - d1.y
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    const d1 = dots[i];
+                    const d2 = dots[j];
+                    const dx = d2.x - d1.x;
+                    const dy = d2.y - d1.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    const dist = Math.sqrt(Math.pow(dx,2)*Math.pow(dy,2))
+                    if (dist < d1.r + d2.r) {
+                        const angle = Math.atan2(dy, dx);
+                        const n_x = Math.cos(angle)
+                        const n_y = Math.sin(angle)
 
-                    if (dist < d1.r + d2.r)
-                    {
-                        
+                        const dot1 = d1.vx * n_x + d1.vy * n_y;
+                        const dot2 = d2.vx * n_x + d2.vy * n_y;
+
+                        d1.vx = d1.vx - 2 * dot1 * n_x;
+                        d1.vy = d1.vy - 2 * dot1 * n_y;
+
+                        d2.vx = d2.vx - 2 * dot2 * n_x;
+                        d2.vy = d2.vy - 2 * dot2 * n_y;
+
+                        const overlap = (d1.r + d2.r) - dist;
+
+                        d1.x -= Math.cos(angle) * overlap / 2;
+                        d1.y -= Math.sin(angle) * overlap / 2;
+                        d2.x += Math.cos(angle) * overlap / 2;
+                        d2.y += Math.sin(angle) * overlap / 2;
+
                     }
                 }
             }
-                
+
+
 
             //run animation
             requestAnimationFrame(draw);
