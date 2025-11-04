@@ -1,12 +1,15 @@
 import React from 'react'
 
 const Navabar = () => {
+    const scrollTo = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      };
     return (
-        <div className='flex flex-row gap-3 text-white font-light'>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#about">About me</a>
+        <div className='flex flex-row gap-4 text-white font-light cursor-pointer'>
+            <a onClick={() => scrollTo("skills")}>Skills</a>
+            <a onClick={() => scrollTo("projects")}>Projects</a>
+            <a onClick={() => scrollTo("experience")}>Experience</a>
+            <a onClick={() => scrollTo("about")}>About me</a>
         </div>
     )
 }

@@ -1,15 +1,15 @@
 import React from 'react'
-import { Github, Linkedin, Facebook } from "lucide-react";
+import { Github, Linkedin, Facebook, Download } from "lucide-react";
 import Navabar from './Navabar';
 
 const Welcome = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center bg-[#0d0d0d] text-white px-8">
-            <div className="max-w-6xl w-full flex flex-row justify-center gap-14">  
+        <section className="min-h-screen flex items-center justify-center bg-transparent text-white px-8">
+            <div className="max-w-6xl w-full flex flex-row justify-center gap-14">
                 {/* Left Side */}
                 <div className="flex justify-center p-0">
                     <img
-                        src="portfolio-photo.png"
+                        src="portfolio-photo.jpg"
                         alt="portfolio"
                         className="w-80 h-auto object-cover rounded-xl shadow-lg"
                     />
@@ -30,7 +30,7 @@ const Welcome = () => {
                     </h2>
 
                     <p className="text-gray-400 max-w-md leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        Python developer with 2 years of experience in backend development, AI automation, and e-commerce web projects.
                     </p>
 
                     <div className="flex space-x-6 text-3xl mt-2">
@@ -38,7 +38,7 @@ const Welcome = () => {
                             href="#"
                             className="text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
                         >
-                            <Github stroke="none" fill="currentColor" strokeWidth={1.5}/>
+                            <Github stroke="none" fill="currentColor" strokeWidth={1.5} />
                         </a>
                         <a
                             href="#"
@@ -53,9 +53,20 @@ const Welcome = () => {
                             <Facebook strokeWidth={1.5} />
                         </a>
                     </div>
-                    <Navabar/>
+                    <Navabar />
+                    <button className="group relative w-40 h-12 rounded-md p-0.5 transition-all duration-500">
+                        <div className="absolute inset-0 rounded-md bg-gray-300 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div className="relative flex flex-row justify-center items-center text-gray-100 bg-[#0d0d0d] w-full h-full gap-3 cursor-pointer rounded-md">
+                            <Download className="text-gray-100" strokeWidth={1.5} />
+                            Grab My CV
+                        </div>
+                    </button>
+
                 </div>
-                
+
             </div>
         </section>
     )

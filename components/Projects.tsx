@@ -1,0 +1,50 @@
+import ProjectCard from "./ProjectCard"
+import Reveal from "./Reveal"
+
+const Projects = () => {
+    return (
+        <div id="projects" className="min-h-screen flex flex-col items-center py-10">
+            <Reveal>
+                <h1 className="text-xl relative inline-block pb-2">
+                    Projects
+                    <span className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600"></span>
+                </h1>
+            </Reveal>
+
+            <div className="flex flex-row gap-10 items-stretch flex-wrap ">
+                <Reveal delay={0.2}>
+                    <ProjectCard
+                        title="RenderX - GPU ecomerce"
+                        description="RenderX is a full-stack e-commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, image storage on Google Cloud, user accounts with refresh tokens, and an admin panel for managing inventory."
+                        image="renderx.png"
+                        github=""
+                    />
+                </Reveal>
+
+                <Reveal delay={0.3}>
+                    <ProjectCard
+                        title="Hermes AI"
+                        description="An intelligent console agent connected to Gemini that manages a Google Calendar in real time based on natural-language prompts."
+                        image="/HermesAI.png"
+                        github="https://github.com/FalconDevX/hermes-ai-agent"
+                    />
+                </Reveal>
+
+                <Reveal delay={0.4}>
+                    <ProjectCard
+                        title="Bee parasite visual detector"
+                        description="A YOLO-based detection tool for identifying Varroa destructor parasites on honeybees, trained on a custom dataset using YOLOv8-small and YOLOv8-medium models."
+                        image="/Bee.png"
+                        github="https://github.com/FalconDevX/bee-varroa-destructor"
+                    />
+                </Reveal>
+
+
+            </div>
+
+
+        </div>
+    )
+}
+
+export default Projects

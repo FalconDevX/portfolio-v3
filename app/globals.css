@@ -26,6 +26,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Roboto, sans-serif;
+  font-family: Fira Code, sans-serif;
+  overflow-x: hidden;
 }
 
