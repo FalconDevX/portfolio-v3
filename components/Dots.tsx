@@ -19,12 +19,19 @@ export default function FloatingDots() {
             //dot size
             r: Math.random() * 4 + 1,
             //dot speed 
-            vx: (Math.random() - 0.5) * 0.25,
-            vy: (Math.random() - 0.5) * 0.25
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: (Math.random() - 0.5) * 0.8,
+
+            color: "rgba(255,255,255,0.8)"
         }));
+
+        let currentColor = "rgba(255,255,255,0.8)";
+        let nextColor = "rgba(219,39,119,0.8)";
 
         //drawing function clear everything before iteration
         const draw = () => {
+
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             //dot changin posiition according to own speed
             dots.forEach(d => {
@@ -38,7 +45,9 @@ export default function FloatingDots() {
                 if (d.y > canvas.height) d.y = 0;
 
                 //dot color and alpha
-                ctx.fillStyle = "rgba(255,255,255,0.35)";
+                ctx.fillStyle = d.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = d.color;
                 ctx.beginPath();
                 //draw circle
                 ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
@@ -58,15 +67,18 @@ export default function FloatingDots() {
                         const n_x = Math.cos(angle)
                         const n_y = Math.sin(angle)
 
+                        //normal vectors
                         const dot1 = d1.vx * n_x + d1.vy * n_y;
                         const dot2 = d2.vx * n_x + d2.vy * n_y;
 
+                        //new speed vectos
                         d1.vx = d1.vx - 2 * dot1 * n_x;
                         d1.vy = d1.vy - 2 * dot1 * n_y;
 
                         d2.vx = d2.vx - 2 * dot2 * n_x;
                         d2.vy = d2.vy - 2 * dot2 * n_y;
 
+                        //move the dots to avoid bugging
                         const overlap = (d1.r + d2.r) - dist;
 
                         d1.x -= Math.cos(angle) * overlap / 2;
@@ -74,10 +86,21 @@ export default function FloatingDots() {
                         d2.x += Math.cos(angle) * overlap / 2;
                         d2.y += Math.sin(angle) * overlap / 2;
 
+                        //change dot colors after collision
+                        d1.color = currentColor;
+                        d2.color = currentColor;
                     }
                 }
-            }
 
+                
+            }
+            let allSame = dots.every(d => d.color === dots[0].color);
+
+            if (allSame) {
+                const temp = currentColor;
+                currentColor = nextColor;
+                nextColor = temp;
+            }
 
 
             //run animation
