@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Navabar = () => {
+const Navbar = () => {
     const scrollTo = (id: string) => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      };
+    };
+    
     return (
         <div className='flex flex-row gap-4 text-white font-light cursor-pointer'>
             <a onClick={() => scrollTo("skills")}>Skills</a>
@@ -14,4 +15,4 @@ const Navabar = () => {
     )
 }
 
-export default Navabar
+export default Navbar

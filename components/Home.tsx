@@ -15,16 +15,14 @@ export default function Home() {
         <div className="bg-transparent text-white ">
             <Welcome/>
 
-            <Reveal>
-                <Skills/>
-            </Reveal>
+            <Reveal delay={0.15}>{(visible) => <Skills visible={visible} />}</Reveal>
 
             <Reveal delay={0.15}>
                 <Projects/>
             </Reveal>
 
             <Reveal delay={0.25}>
-                <section id="experience" className="min-h-screen flex justify-center items-start py-10">
+                <section id="experience" className="min-h-screen flex justify-center items-start py-10 scroll-mt-20">
                     Experience section
                 </section>
             </Reveal>

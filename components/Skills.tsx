@@ -9,13 +9,13 @@ import {
     SiMongodb,
 } from "react-icons/si";
 
-const Skills = () => {
+const Skills = ({ visible }: { visible?: boolean }) => {
     const icons = [SiPython, SiDjango, SiFlask, SiPytorch, SiReact, SiMysql, SiMongodb];
 
     return (
         <section
             id="skills"
-            className="min-h-80 flex flex-col items-center py-10"
+            className="min-h-80 flex flex-col items-center py-10 scroll-mt-10"
         >
             <h1 className="text-xl relative inline-block pb-2">
                 Skills
@@ -25,17 +25,20 @@ const Skills = () => {
                 Backend-focused developer experienced in Python (Django, Flask) with both SQL (MySQL) and NoSQL (MongoDB) databases. Familiar with React and TypeScript. Now shifting my career path toward data science and machine learning.
             </p>
             <motion.div
-                viewport={{ once: true }}
+                // viewport={{ once: false }}
                 className="flex flex-row gap-6 mt-10"
             >
 
                 {icons.map((Icon, i) => (
                     <motion.div
-                        key={i}
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.5 + i * 0.1 }}
+                        key={`${i}-${visible}`}
+                        initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                        animate={
+                            visible
+                                ? { opacity: 1, scale: 1, y: 0 }
+                                : { opacity: 0, scale: 0.5, y: 20 }
+                        }
+                        transition={{ duration: 0.4, delay: i * 0.08 }}
                     >
                         <Icon className="text-6xl" />
                     </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Github, Linkedin, Facebook, Download } from "lucide-react";
-import Navabar from './Navabar';
+import Navbar from './Navbar';
 
 const Welcome = () => {
     return (
@@ -55,7 +55,7 @@ const Welcome = () => {
                             <Facebook strokeWidth={1.5} />
                         </a>
                     </div>
-                    <Navabar />
+                    <Navbar />
                     <button className="group relative w-40 h-12 rounded-md p-0.5 transition-all duration-500">
                         <div className="absolute inset-0 rounded-md bg-gray-300 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 

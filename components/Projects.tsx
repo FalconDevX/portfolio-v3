@@ -3,7 +3,7 @@ import Reveal from "./Reveal"
 
 const Projects = () => {
     return (
-        <div id="projects" className="min-h-screen flex flex-col items-center py-10">
+        <div id="projects" className="min-h-screen flex flex-col items-center py-10 scroll-mt-20">
             <Reveal>
                 <h1 className="text-xl relative inline-block pb-2">
                     Projects
