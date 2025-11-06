@@ -59,7 +59,7 @@ const Welcome = () => {
                     <button className="group relative w-40 h-12 rounded-md p-0.5 transition-all duration-500">
                         <div className="absolute inset-0 rounded-md bg-gray-300 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 
-                        <div className="absolute inset-0 rounded-md bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         <div className="relative flex flex-row justify-center items-center text-gray-100 bg-[#0d0d0d] w-full h-full gap-3 cursor-pointer rounded-md">
                             <Download className="text-gray-100" strokeWidth={1.5} />
