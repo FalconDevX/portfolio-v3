@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Linkedin, Facebook, Download } from "lucide-react";
+import { Github, Linkedin, Facebook, Download, MapPin } from "lucide-react";
 import Navbar from './Navbar';
 
 const Welcome = () => {
@@ -33,7 +33,12 @@ const Welcome = () => {
                         Python developer with 2 years of experience in backend development, AI automation, and <span className="whitespace-nowrap">e-commerce</span> web projects.
                     </p>
 
-                    <div className="flex space-x-6 text-3xl mt-2">
+                    <div className='flex flex-row gap-3'>
+                        <MapPin className='text-gray-300'/>
+                        <h2 className='text-gray-300'>Kraków</h2>
+                    </div>
+
+                    <div className="flex space-x-6 text-3xl">
                         <a
                             href="https://github.com/FalconDevX"
                             target="_blank"
