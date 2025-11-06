@@ -9,7 +9,7 @@ const Welcome = () => {
                 {/* Left Side */}
                 <div className="hidden lg:flex justify-center p-0">
                     <img
-                        src="portfolio-photo.jpg"
+                        src="portfolio-photo.png"
                         alt="portfolio"
                         className="w-80 h-auto object-cover rounded-xl shadow-lg"
                     />
