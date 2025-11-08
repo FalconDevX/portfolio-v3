@@ -30,7 +30,7 @@ const Welcome = () => {
                     </h2>
 
                     <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
-                        Python developer with 2 years of experience in backend development, AI automation, and <span className="whitespace-nowrap">e-commerce</span> web projects.
+                        Python Software Developer with 2 years of experience in backend systems, APIs, and AI agents — now shifting toward data science and machine learning.
                     </p>
 
                     <div className='flex flex-row gap-3'>

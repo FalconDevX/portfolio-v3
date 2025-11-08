@@ -5,6 +5,7 @@ import Reveal from "./Reveal";
 import { useEffect } from "react";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Education from "./Education";
 
 export default function Home() {
     useEffect(() => {
@@ -22,9 +23,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.25}>
-                <section id="experience" className="min-h-screen flex justify-center items-start py-10 scroll-mt-20">
-                    Experience section
-                </section>
+                <Education/>
             </Reveal>
 
             <Reveal delay={0.35}>

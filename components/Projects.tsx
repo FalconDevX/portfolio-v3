@@ -15,7 +15,7 @@ const Projects = () => {
                 <Reveal delay={0.2}>
                     <ProjectCard
                         title="RenderX - GPU ecomerce"
-                        description="RenderX is a full-stack e-commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, image storage on Google Cloud, user accounts with refresh tokens, and an admin panel for managing inventory."
+                        description="RenderX is a full-stack e&#8209;commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, file storage on GCP, user accounts with refresh tokens, and an admin panel for managing inventory."
                         image="renderx.png"
                         github=""
                     />
