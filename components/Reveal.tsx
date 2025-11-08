@@ -10,7 +10,12 @@ interface RevealProps {
 
 export default function Reveal({ children, delay = 0 }: RevealProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+    const isInView = useInView(ref, { 
+        once: false,
+        amount: 0.2,
+        margin: "10% 0px -10% 0px"
+    });
 
     return (
         <motion.div
