@@ -1,7 +1,7 @@
 import ProjectCard from "./ProjectCard"
 import Reveal from "./Reveal"
 
-const Projects = () => {
+const TopProjects = () => {
     return (
         <div id="projects" className="min-h-screen flex flex-col items-center py-10 scroll-mt-20">
             <div className="flex inline-block">
@@ -59,4 +59,4 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default TopProjects

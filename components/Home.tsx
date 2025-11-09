@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import Reveal from "./Reveal";
 import { useEffect } from "react";
 import Skills from "./Skills";
-import Projects from "./Projects";
+import TopProjects from "./TopProjects";
 import Education from "./Education";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
             <Reveal delay={0.15}>{(visible) => <Skills visible={visible} />}</Reveal>
 
             <Reveal delay={0.15}>
-                <Projects/>
+                <TopProjects/>
             </Reveal>
 
             <Reveal delay={0.25}>
