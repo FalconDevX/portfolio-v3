@@ -1,26 +1,33 @@
+import { useRouter } from "next/navigation"
 import ProjectCard from "./ProjectCard"
 import Reveal from "./Reveal"
 
 const TopProjects = () => {
+    const router = useRouter()
+
     return (
         <div id="projects" className="min-h-screen flex flex-col items-center py-10 scroll-mt-20">
-            <div className="flex inline-block">
-                <div className="flex flex-row justify-between items-center w-full">
+            <div className="flex flex-col items-center w-full">
+                <div className="flex flex-row justify-between items-center w-full max-w-6xl px-4 mb-10">
                     <div className="w-1/3"></div>
-                    
+
                     <div className="w-1/3 flex justify-center">
                         <Reveal>
                             <h1 className="text-xl relative inline-block pb-2">
-                                Projects
+                                Top Projects
                                 <span className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600"></span>
                             </h1>
                         </Reveal>
                     </div>
-                    <a className="w-1/3 flex justify-end ">
-                        <h2 className="border border-gray-300 hover:bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 p-2 cursor-pointer transition-all duration-300 hover">
+                    <a className="w-1/3 flex justify-end">
+                        <button
+                            type="button"
+                            onClick={() => router.push("/projects")}
+                            className="relative px-4 py-2 text-sm font-medium border-transparent rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg cursor-pointer">
                             All projects
-                        </h2>
+                        </button>
                     </a>
+
                 </div>
 
                 <div className="flex flex-row flex-wrap justify-center gap-10">
@@ -52,7 +59,7 @@ const TopProjects = () => {
                     </Reveal>
                 </div>
             </div>
-            
+
 
 
         </div>
