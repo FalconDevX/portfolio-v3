@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation"
-import ProjectCard from "./ProjectCard"
+import TopProjectCard from "./TopProjectCard"
 import Reveal from "./Reveal"
 
 const TopProjects = () => {
@@ -7,8 +7,8 @@ const TopProjects = () => {
 
     return (
         <div id="projects" className="min-h-screen flex flex-col items-center py-10 scroll-mt-20">
-            <div className="flex flex-col items-center w-full">
-                <div className="flex flex-row justify-between items-center w-full max-w-6xl px-4 mb-10">
+            <div className="flex flex-col items-center">
+                <div className="flex flex-row justify-between items-center w-full max-w mb-10">
                     <div className="w-1/3"></div>
 
                     <div className="w-1/3 flex justify-center">
@@ -20,19 +20,22 @@ const TopProjects = () => {
                         </Reveal>
                     </div>
                     <a className="w-1/3 flex justify-end">
-                        <button
-                            type="button"
-                            onClick={() => router.push("/projects")}
-                            className="relative px-4 py-2 text-sm font-medium border-transparent rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg cursor-pointer">
-                            All projects
-                        </button>
+                        <Reveal delay={1.0}>
+                            <button
+                                type="button"
+                                onClick={() => router.push("/projects")}
+                                className="relative px-4 py-2 text-sm font-medium border-transparent rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg cursor-pointer">
+                                All projects
+                            </button>
+                        </Reveal>
+
                     </a>
 
                 </div>
 
                 <div className="flex flex-row flex-wrap justify-center gap-10">
                     <Reveal delay={0.2}>
-                        <ProjectCard
+                        <TopProjectCard
                             title="RenderX - GPU ecomerce"
                             description="RenderX is a full-stack e&#8209;commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, file storage on GCP, user accounts with refresh tokens, and an admin panel for managing inventory."
                             image="renderx.png"
@@ -41,7 +44,7 @@ const TopProjects = () => {
                     </Reveal>
 
                     <Reveal delay={0.3}>
-                        <ProjectCard
+                        <TopProjectCard
                             title="Hermes AI"
                             description="An intelligent console agent connected to Gemini that manages a Google Calendar in real time based on natural-language prompts."
                             image="/HermesAI.png"
@@ -50,7 +53,7 @@ const TopProjects = () => {
                     </Reveal>
 
                     <Reveal delay={0.4}>
-                        <ProjectCard
+                        <TopProjectCard
                             title="Bee parasite visual detector"
                             description="A YOLO-based detection tool for identifying Varroa destructor parasites on honeybees, trained on a custom dataset using YOLOv8-small and YOLOv8-medium models."
                             image="/Bee.png"

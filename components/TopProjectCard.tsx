@@ -9,7 +9,7 @@ interface ProjectCardProps{
     github: string
 }
 
-const ProjectCard = ({title, description, image, github}:ProjectCardProps) => {
+const TopProjectCard = ({title, description, image, github}:ProjectCardProps) => {
     const [imageOpen, setImageOpen] = useState(false)
 
     //block scroll
@@ -52,4 +52,4 @@ const ProjectCard = ({title, description, image, github}:ProjectCardProps) => {
     )
 }
 
-export default ProjectCard
+export default TopProjectCard

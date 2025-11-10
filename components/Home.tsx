@@ -46,7 +46,7 @@ export default function Home() {
 
             <button
                 onClick={scrollToTop}
-                className={`fixed bottom-6 right-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-600 hover:drop-shadow-[0_0_20px_rgba(236,72,153,0.6)] text-white p-3 rounded-full shadow-lg transform transition-all duration-400 cursor-pointer
+                className={`fixed bottom-6 right-6 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 hover:drop-shadow-[0_0_20px_rgba(236,72,153,0.6)] text-white p-3 rounded-full shadow-lg transform transition-all duration-400 cursor-pointer
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"}`}
             >
                 <ArrowUp size={22} />

@@ -63,7 +63,7 @@ export default function Dots() {
             const maxDist = getMaxDistance();
             
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+            ctx.shadowBlur = 10;
             dots.forEach(d => {
                 d.x += d.vx;
                 d.y += d.vy;
@@ -74,7 +74,6 @@ export default function Dots() {
                 if (d.y > canvas.height) d.y = 0;
 
                 ctx.fillStyle = d.color;
-                ctx.shadowBlur = 10;
                 ctx.shadowColor = d.color;
                 ctx.beginPath();
                 ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
@@ -94,7 +93,7 @@ export default function Dots() {
                         ctx.moveTo(d1.x, d1.y);
                         ctx.lineTo(d2.x, d2.y);
                         ctx.strokeStyle = "rgba(255,255,255,0.1)";
-                        ctx.lineWidth = 3;
+                        ctx.lineWidth = 1;
                         ctx.stroke();
                     }
 
