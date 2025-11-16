@@ -28,13 +28,10 @@ const TopProjects = () => {
                                 All projects
                             </button>
                         </Reveal>
-
                     </a>
-
                 </div>
 
-
-                <div className="flex flex-wrap justify-center gap-10 w-full max-w-5xl mx-auto">
+                <div className="inline-flex flex-wrap gap-10">
                     <Reveal delay={0.2}>
                         <TopProjectCard
                             title="RenderX - GPU ecomerce"

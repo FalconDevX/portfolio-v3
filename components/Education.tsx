@@ -36,10 +36,41 @@ const Education = () => {
 
                 <Reveal delay={0.3}>
                     <div className="flex flex-col bg-black/80 p-5 shadow-md">
-                        <h2 className="text-lg font-semibold mb-1">Member of Student Club at AGH</h2>
-                        <p className="text-gray-400">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus tempora unde expedita officiis laboriosam. Similique?
-                        </p>
+                        <h2 className="text-lg font-semibold mb-1">Member of Analytica Student Club at AGH</h2>
+                        <div className="flex flex-row gap-5 items-start">
+                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-start justify-center shrink-0">
+                                <img
+                                    src="/analytica-logo.png"
+                                    alt="hack-yeah logo"
+                                    className="object-contain w-full h-full rounded-lg brightness-0 invert"
+                                />
+                            </div>
+                            <p className="text-gray-400">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus tempora unde expedita officiis laboriosam. Similique?
+                            </p>
+                        </div>
+
+                    </div>
+                </Reveal>
+
+                <Reveal delay={0.3}>
+                    <div className="flex flex-col bg-black/80 p-5 shadow-md">
+                        <h2 className="text-lg font-semibold mb-1">Hackathons</h2>
+                        <div className="flex flex-row gap-5 items-start">
+                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0 mt-2">
+                                <img
+                                    src="/hack-yeah.jpg"
+                                    alt="hack-yeah logo"
+                                    className="object-contain w-full h-full rounded-lg"
+                                />
+                            </div>
+
+                            <p className="text-gray-400">
+                                Participated in a four-person team at the
+                                <span className="font-bold"> HackYeah</span>
+                                {" "}hackathon, where we developed a retirement simulation system for the Polish Social Insurance Institution (ZUS).
+                            </p>
+                        </div>
                     </div>
                 </Reveal>
 
