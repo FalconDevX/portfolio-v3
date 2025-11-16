@@ -13,15 +13,22 @@ const Education = () => {
             <div className="flex flex-col gap-6 w-full max-w-2xl px-4">
                 <Reveal delay={0.2}>
                     <div className="flex flex-col bg-black/80 p-5 shadow-md">
-                        <div className="flex flex-row items-center gap-4">
-                            <img src="/logo-agh.svg" alt="AGH logo" className="w-12 h-auto" />
-                            <h2 className="text-lg font-semibold">
-                                AGH University of Science and Technology
-                            </h2>
+                        <h2 className="text-lg font-semibold mb-1">
+                            AGH University of Science and Technology
+                        </h2>
+                        <div className="flex flex-row gap-5 items-start">
+                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0">
+                                <img
+                                    src="/logo-agh.svg"
+                                    alt="AGH logo"
+                                    className="object-contain w-full h-full rounded-lg"
+                                />
+                            </div>
+                            <p className="text-gray-400">
+                                Undergraduate in Computer Science and Engineering (2023–Present)
+                            </p>
                         </div>
-                        <p className="text-gray-400 ml-16">
-                            Undergraduate in Computer Science and Engineering (2023–Present)
-                        </p>
+
                     </div>
                 </Reveal>
 
