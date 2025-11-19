@@ -37,7 +37,7 @@ const TopProjects = () => {
                             title="RenderX - GPU ecomerce"
                             description="RenderX is a full-stack e&#8209;commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, file storage on GCP, user accounts with refresh tokens, and an admin panel for managing inventory."
                             image="renderx.png"
-                            github=""
+                            github="https://github.com/FalconDevX/renderx-frontend"
                         />
                     </Reveal>
 
