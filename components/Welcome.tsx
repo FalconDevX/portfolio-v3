@@ -18,7 +18,7 @@ const Welcome = () => {
                 {/* Right Side */}
                 <div className="flex flex-col space-y-6">
                     <h1 className="text-5xl font-light leading-tight">
-                        Hi, I'm <span className="font-semibold text-white">Matt</span>
+                        Hi, I'm <span className="font-semibold text-white">Mateusz</span>
                     </h1>
 
                     <h2 className="text-4xl font-light leading-tight">
@@ -30,7 +30,7 @@ const Welcome = () => {
                     </h2>
 
                     <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
-                        Python Software Developer with 2 years of experience in backend systems, APIs, and AI agents — now shifting toward data science and machine learning.
+                    Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.
                     </p>
 
                     <div className='flex flex-row gap-3'>

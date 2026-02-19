@@ -24,9 +24,15 @@ const Education = () => {
                                     className="object-contain w-full h-full rounded-lg"
                                 />
                             </div>
-                            <p className="text-gray-400">
-                                Undergraduate in Computer Science and Engineering (2023–Present)
-                            </p>
+                            <div className="flex flex-col gap-2">
+                                <p>
+                                    <span className="font-normal">Undergraduate in Computer Science and Engineering (2023–Present)</span>
+                                </p>
+
+                                <p className="text-gray-400">
+                                    Coursework includes statistical data analysis, optimization methods, databases (SQL & NoSQL), algorithms, and object-oriented programming.
+                                </p>
+                            </div>
                         </div>
 
                     </div>
@@ -53,7 +59,7 @@ const Education = () => {
                                 />
                             </div>
                             <p className="text-gray-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus tempora unde expedita officiis laboriosam. Similique?
+                            Working on an NLP-based system for extracting geodetic parameters from user input to support <span className="whitespace-nowrap">land-plot</span> search. Focused on prompt design, structured argument extraction, data validation and guided interaction workflows.
                             </p>
                         </div>
 
