@@ -1,6 +1,7 @@
-import React from 'react'
-import { Github, Linkedin, Facebook, Download, MapPin } from "lucide-react";
+"use client";
+import { Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import Navbar from './Navbar';
+import toast from "react-hot-toast";
 
 const Welcome = () => {
     return (
@@ -30,11 +31,11 @@ const Welcome = () => {
                     </h2>
 
                     <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
-                    Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.
+                        Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.
                     </p>
 
                     <div className='flex flex-row gap-3'>
-                        <MapPin className='text-gray-300'/>
+                        <MapPin className='text-gray-300' />
                         <h2 className='text-gray-300'>Kraków</h2>
                     </div>
 
@@ -57,18 +58,35 @@ const Welcome = () => {
                             href="#"
                             className="text-gray-400 hover:text-pink-600 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(219,39,119,0.5)]"
                         >
-                            <Facebook strokeWidth={1.5} />
+                            <Mail
+                                strokeWidth={1.5}
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    navigator.clipboard.writeText("mateusznowaczek@proton.me");
+
+                                    toast.success("Email copied to clipboard", {
+                                        style: {
+                                            color: "#f1f5f9",
+                                            border: "1px solid transparent",
+                                            background:
+                                                "linear-gradient(#000000, #000000) padding-box, linear-gradient(90deg,#FFD600,#FF2D7A) border-box",
+                                        },
+                                    });
+                                }}
+                            />
                         </a>
                     </div>
                     <Navbar />
-                    <button className="group relative w-40 h-12 rounded-md p-0.5 transition-all duration-500">
+                    <button className="group relative w-50 h-12 rounded-md p-0.5 transition-all duration-500">
                         <div className="absolute inset-0 rounded-md bg-gray-300 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 
                         <div className="absolute inset-0 rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         <div className="relative flex flex-row justify-center items-center text-gray-100 bg-[#0d0d0d] w-full h-full gap-3 cursor-pointer rounded-md">
                             <Download className="text-gray-100" strokeWidth={1.5} />
-                            Grab My CV
+                            <a href="/Resume_Mateusz_Nowaczek.pdf" download>
+                                <span className="whitespace-nowrap">Grab My Resume</span>
+                            </a>
                         </div>
                     </button>
 

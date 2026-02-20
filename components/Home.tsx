@@ -7,6 +7,7 @@ import Skills from "./Skills";
 import TopProjects from "./TopProjects";
 import Education from "./Education";
 import { ArrowUp } from "lucide-react";
+import AboutMe from "./AboutMe";
 
 export default function Home() {
     const [visible, setVisible] = useState(false);
@@ -39,9 +40,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.35}>
-                <section id="about" className="min-h-screen flex justify-center items-start py-10">
-                    About me section
-                </section>
+                <AboutMe />
             </Reveal>
 
             <button

@@ -41,9 +41,24 @@ const Education = () => {
                 <Reveal delay={0.25}>
                     <div className="flex flex-col bg-black/80 p-5 shadow-md">
                         <h2 className="text-lg font-semibold mb-1">Academic Projects</h2>
-                        <p className="text-gray-400">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, assumenda! Recusandae doloribus ab voluptatibus nihil.
-                        </p>
+                        <div className="flex flex-row gap-5 items-start">
+                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0">
+                                <img
+                                    src="/mes.png"
+                                    alt="MES logo"
+                                    className="object-contain w-full h-full rounded-lg"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <p>
+                                    <span className="font-normal">FEM Simulation</span>
+                                </p>
+                                <p className="text-gray-400">
+                                Engineering-focused simulation solving a transient heat conduction problem with internal heat sources using the Finite Element Method.
+                                </p>
+                            </div>
+                        </div>
+                        
                     </div>
                 </Reveal>
 
