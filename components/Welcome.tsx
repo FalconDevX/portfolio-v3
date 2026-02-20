@@ -34,10 +34,16 @@ const Welcome = () => {
                         Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.
                     </p>
 
+
                     <div className='flex flex-row gap-3'>
-                        <MapPin className='text-gray-300' />
-                        <h2 className='text-gray-300'>Kraków</h2>
+                        <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className="text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+                            <MapPin strokeWidth={1.5} />
+                        </a>
+                        <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className=" transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+                            <h2 className='text-gray-300 hover:text-yellow-400'>Kraków</h2>
+                        </a>
                     </div>
+
 
                     <div className="flex space-x-6 text-3xl">
                         <a
