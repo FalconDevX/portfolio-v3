@@ -44,7 +44,6 @@ const Welcome = () => {
                         </a>
                     </div>
 
-
                     <div className="flex space-x-6 text-3xl">
                         <a
                             href="https://github.com/FalconDevX"
