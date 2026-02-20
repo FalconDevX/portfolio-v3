@@ -8,8 +8,8 @@ const TopProjects = () => {
     return (
         <div id="projects" className="min-h-screen flex flex-col items-center py-10 scroll-mt-20">
             <div className="flex flex-col items-center w-fit">
-                <div className="flex flex-row justify-between items-center w-full mb-10">
-                    <div className="w-1/3"></div>
+                <div className="flex flex-row justify-between items-center w-full mb-10 sm:justify-start">
+                    <div className="hidden sm:block sm:w-1/3"></div>
 
                     <div className="w-1/3 flex justify-center">
                         <Reveal>
@@ -19,7 +19,7 @@ const TopProjects = () => {
                             </h1>
                         </Reveal>
                     </div>
-                    <a className="w-1/3 flex justify-end">
+                    <a className="w-1/3 flex justify-end mr-10 sm:mr-0">
                         <Reveal delay={1.0}>
                             <button
                                 type="button"
@@ -31,7 +31,7 @@ const TopProjects = () => {
                     </a>
                 </div>
 
-                <div className="inline-flex flex-wrap gap-10">
+                <div className="inline-flex flex-wrap gap-10 justify-center sm:justify-center">
                     <Reveal delay={0.2}>
                         <TopProjectCard
                             title="RenderX - GPU ecomerce"
