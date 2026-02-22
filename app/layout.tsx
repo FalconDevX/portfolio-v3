@@ -39,6 +39,7 @@ export default function RootLayout({
         <Dots />
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

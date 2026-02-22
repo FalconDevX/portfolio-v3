@@ -32,7 +32,7 @@ const TopProjects = () => {
                 </div>
 
                 <div className="inline-flex flex-wrap gap-10 justify-center sm:justify-center">
-                    <Reveal delay={1.5}>
+                    <Reveal delay={0.4}>
                         <TopProjectCard
                             title="RenderX - GPU ecomerce"
                             description="RenderX is a full-stack e&#8209;commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, file storage on GCP, user accounts with refresh tokens, and an admin panel for managing inventory."
@@ -41,7 +41,7 @@ const TopProjects = () => {
                         />
                     </Reveal>
 
-                    <Reveal delay={0.3}>
+                    <Reveal delay={0.5}>
                         <TopProjectCard
                             title="Hermes AI"
                             description="An intelligent console agent connected to Gemini that manages a Google Calendar in real time based on natural-language prompts."
@@ -50,7 +50,7 @@ const TopProjects = () => {
                         />
                     </Reveal>
 
-                    <Reveal delay={0.4}>
+                    <Reveal delay={0.6}>
                         <TopProjectCard
                             title="Bee parasite visual detector"
                             description="A YOLO-based detection tool for identifying Varroa destructor parasites on honeybees, trained on a custom dataset using YOLOv8-small and YOLOv8-medium models."
