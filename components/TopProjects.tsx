@@ -11,15 +11,15 @@ const TopProjects = () => {
                 <div className="flex flex-row justify-between items-center w-full mb-10 sm:justify-start">
                     <div className="hidden sm:block sm:w-1/3"></div>
 
-                    <div className="w-1/3 flex justify-center">
-                        <Reveal>
+                    <div className="w-1/2 sm:w-1/3 flex justify-center ml-10 sm:mr-0">
+                        <Reveal >
                             <h1 className="text-xl relative inline-block pb-2">
                                 Top Projects
                                 <span className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600"></span>
                             </h1>
                         </Reveal>
                     </div>
-                    <a className="w-1/3 flex justify-end mr-10 sm:mr-0">
+                    <a className="w-1/2 sm:w-1/3 flex justify-end mr-10 sm:mr-0">
                         <Reveal delay={1.0}>
                             <button
                                 type="button"
@@ -32,7 +32,7 @@ const TopProjects = () => {
                 </div>
 
                 <div className="inline-flex flex-wrap gap-10 justify-center sm:justify-center">
-                    <Reveal delay={0.2}>
+                    <Reveal delay={1.5}>
                         <TopProjectCard
                             title="RenderX - GPU ecomerce"
                             description="RenderX is a full-stack e&#8209;commerce platform built with Django (REST API, JWT auth, MySQL) and a Next.js/React frontend. Features include product search, file storage on GCP, user accounts with refresh tokens, and an admin panel for managing inventory."

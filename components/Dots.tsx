@@ -1,6 +1,18 @@
 "use client";
 import { useEffect, useRef } from "react";
 
+const MOBILE_BREAKPOINT = 768;
+const MOBILE_TARGET_FPS = 30;
+
+interface Dot {
+    x: number;
+    y: number;
+    r: number;
+    vx: number;
+    vy: number;
+    color: string;
+}
+
 export default function Dots() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const whiteColor = "rgba(255,255,255,0.4)";
@@ -11,23 +23,29 @@ export default function Dots() {
         const canvas = canvasRef.current!;
         const ctx = canvas.getContext("2d")!;
         
-        let dots: any[] = [];
+        let dots: Dot[] = [];
         let animationId: number;
+        let mobileSize = { w: 0, h: 0 };
+        let lastFrameTime = 0;
         
-        const getDotCount = () => {
-            const w = window.innerWidth;
-            if (w < 640) return 60;
-            if (w < 1024) return 120;
+        const isMobile = () => window.innerWidth < MOBILE_BREAKPOINT;
+        
+        const getDotCount = (w: number) => {
+            if (w < 640) return 26;
+            if (w < MOBILE_BREAKPOINT) return 36;
+            if (w < 1024) return 100;
             if (w < 1440) return 180;
             return 250;
         };
         
-        const getMaxDistance = () => {
-            return window.innerWidth < 768 ? 100 : 80;
+        const getMaxDistance = (w: number) => {
+            return w < MOBILE_BREAKPOINT ? 55 : 80;
         };
         
         const initDots = () => {
-            const count = getDotCount();
+            const w = canvas.width;
+            const h = canvas.height;
+            const count = getDotCount(w);
             dots = Array.from({ length: count }, () => {
                 let vx, vy;
 
@@ -40,8 +58,8 @@ export default function Dots() {
                 } while (Math.abs(vy) < 0.1);
 
                 return {
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
+                    x: Math.random() * w,
+                    y: Math.random() * h,
                     r: Math.random() * 3 + 2,
                     vx,
                     vy,
@@ -51,19 +69,47 @@ export default function Dots() {
         };
         
         const resize = () => {
+            if (isMobile()) {
+                if (mobileSize.w === 0 && mobileSize.h === 0) {
+                    mobileSize.w = window.innerWidth;
+                    mobileSize.h = window.innerHeight;
+                    canvas.width = mobileSize.w;
+                    canvas.height = mobileSize.h;
+                    initDots();
+                }
+                return;
+            }
+            mobileSize.w = 0;
+            mobileSize.h = 0;
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             initDots();
         };
         
+        const onOrientationChange = () => {
+            if (isMobile()) {
+                mobileSize.w = 0;
+                mobileSize.h = 0;
+                resize();
+            }
+        };
+        
         resize();
         window.addEventListener('resize', resize);
+        window.addEventListener('orientationchange', onOrientationChange);
 
-        const draw = () => {
-            const maxDist = getMaxDistance();
+        const draw = (timestamp = 0) => {
+            const mobileMode = canvas.width < MOBILE_BREAKPOINT;
+            if (mobileMode && timestamp - lastFrameTime < 1000 / MOBILE_TARGET_FPS) {
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+            lastFrameTime = timestamp; 
+
+            const maxDist = getMaxDistance(canvas.width);
             
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.shadowBlur = 10;
+            ctx.shadowBlur = mobileMode ? 0 : 10;
             dots.forEach(d => {
                 d.x += d.vx;
                 d.y += d.vy;
@@ -141,6 +187,7 @@ export default function Dots() {
         
         return () => {
             window.removeEventListener('resize', resize);
+            window.removeEventListener('orientationchange', onOrientationChange);
             cancelAnimationFrame(animationId);
         };
     }, []);

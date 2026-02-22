@@ -15,9 +15,11 @@ export default function Home() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollThreshold = window.innerHeight * 0.01
-            setVisible(window.scrollY > scrollThreshold)
+            const nextVisible = window.scrollY > scrollThreshold;
+            setVisible((prevVisible) => (prevVisible === nextVisible ? prevVisible : nextVisible));
         }
-        window.addEventListener("scroll", handleScroll)
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true })
         return () => window.removeEventListener("scroll", handleScroll)
     }, []);
 

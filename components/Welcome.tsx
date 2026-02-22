@@ -18,17 +18,43 @@ const Welcome = () => {
 
                 {/* Right Side */}
                 <div className="flex flex-col space-y-6">
-                    <h1 className="text-5xl font-light leading-tight">
-                        Hi, I'm <span className="font-semibold text-white">Mateusz</span>
-                    </h1>
+                    <div className="flex flex-row gap-2">
+                        <div className="hidden sm:flex lg:hidden justify-center p-0">
+                            <img
+                                src="portfolio-photo.jpg"
+                                alt="portfolio"
+                                className="w-40 h-auto object-cover rounded-xl shadow-lg"
+                            />
+                        </div>
+                        <div>
+                            <div className="flex flex-row gap-5">
+                                <div className="flex sm:hidden justify-center p-0">
+                                    <img
+                                        src="portfolio-photo.jpg"
+                                        alt="portfolio"
+                                        className="w-40 aspect-square object-cover object-bottom rounded-xl shadow-lg"
+                                    />
+                                </div>
 
-                    <h2 className="text-4xl font-light leading-tight">
-                        I'm a{" "}
-                        <span className="font-bold bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
-                            Python
-                        </span>{" "}
-                        software developer
-                    </h2>
+                                <h1 className="text-5xl font-light leading-tight">
+                                    Hi, I'm <span className="font-semibold text-white">Mateusz</span>
+                                </h1>
+
+                            </div>
+
+                            <h2 className="text-4xl font-light leading-tight">
+                                I'm a{" "}
+                                <span className="font-bold bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
+                                    Python
+                                </span>{" "}
+                                <br className="hidden sm:block" />
+                                software  developer
+                            </h2>
+                        </div>
+
+                    </div>
+
+
 
                     <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
                         Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.

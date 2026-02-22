@@ -22,9 +22,9 @@ const TopProjectCard = ({title, description, image, github}:ProjectCardProps) =>
     }, [imageOpen]);
 
     return (
-        <div className="p-0.5 bg-linear-to-b from-orange-500 to-yellow-600 mt-10">
+        <div className="p-0.5 bg-linear-to-b from-orange-500 to-yellow-600 mt-10 mx-10 sm:mx-0">
             <div className="flex flex-col h-full">
-                <div className='flex flex-col w-100 bg-black p-10 h-full'>
+                <div className='flex flex-col w-full sm:w-100 bg-black p-10 h-full'>
                     <h2>{title}</h2>
                     <p className="text-gray-400 mt-5">
                         {description}
