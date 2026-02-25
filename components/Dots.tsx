@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 const MOBILE_BREAKPOINT = 768;
 const MOBILE_TARGET_FPS = 30;
@@ -15,6 +16,7 @@ interface Dot {
 
 export default function Dots() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const { resolvedTheme } = useTheme();
     const whiteColor = "rgba(255,255,255,0.4)";
     const pinkColor = "rgba(219,39,119,0.4)";
     const yellowColor = "rgba(252, 211, 77,0.4)";
@@ -110,6 +112,7 @@ export default function Dots() {
             
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.shadowBlur = mobileMode ? 0 : 10;
+            const isLight = resolvedTheme === "light";
             dots.forEach(d => {
                 d.x += d.vx;
                 d.y += d.vy;
@@ -119,8 +122,8 @@ export default function Dots() {
                 if (d.y < 0) d.y = canvas.height;
                 if (d.y > canvas.height) d.y = 0;
 
-                ctx.fillStyle = d.color;
-                ctx.shadowColor = d.color;
+                ctx.fillStyle = isLight ? "rgba(0,0,0,0.7)" : d.color;
+                ctx.shadowColor = isLight ? "rgba(0,0,0,0.4)" : d.color;
                 ctx.beginPath();
                 ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
                 ctx.fill();
@@ -138,7 +141,9 @@ export default function Dots() {
                         ctx.beginPath();
                         ctx.moveTo(d1.x, d1.y);
                         ctx.lineTo(d2.x, d2.y);
-                        ctx.strokeStyle = "rgba(255,255,255,0.1)";
+                        ctx.strokeStyle = resolvedTheme === "light"
+                            ? "rgba(0,0,0,0.25)"
+                            : "rgba(255,255,255,0.1)";
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
@@ -164,18 +169,19 @@ export default function Dots() {
                         d2.x += Math.cos(angle) * overlap / 2;
                         d2.y += Math.sin(angle) * overlap / 2;
 
-                        if (d1.color === whiteColor && d2.color === whiteColor) {
-                            d1.color = pinkColor;
-                            d2.color = pinkColor;
-                        }
-                        else if (d1.color === pinkColor && d2.color === pinkColor) {
-                            d1.color = yellowColor;
-                            d2.color = yellowColor;
-                        }
-                        else if (d1.color === yellowColor && d2.color === yellowColor) {
-                            d1.color = whiteColor;
-                            d2.color = whiteColor;
-                        }
+                        // Kolor pozostaje bez zmian po zderzeniu:
+                        // if (d1.color === whiteColor && d2.color === whiteColor) {
+                        //     d1.color = pinkColor;
+                        //     d2.color = pinkColor;
+                        // }
+                        // else if (d1.color === pinkColor && d2.color === pinkColor) {
+                        //     d1.color = yellowColor;
+                        //     d2.color = yellowColor;
+                        // }
+                        // else if (d1.color === yellowColor && d2.color === yellowColor) {
+                        //     d1.color = whiteColor;
+                        //     d2.color = whiteColor;
+                        // }
                     }
                 }
             }
@@ -190,7 +196,7 @@ export default function Dots() {
             window.removeEventListener('orientationchange', onOrientationChange);
             cancelAnimationFrame(animationId);
         };
-    }, []);
+    }, [resolvedTheme]);
 
     return <canvas ref={canvasRef} className="fixed inset-0 -z-10 pointer-events-none" />;
 }

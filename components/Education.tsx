@@ -12,12 +12,12 @@ const Education = () => {
 
             <div className="flex flex-col gap-6 w-full max-w-2xl px-4">
                 <Reveal delay={0.2}>
-                    <div className="flex flex-col bg-black/80 p-5 shadow-md">
+                    <div className="flex flex-col dark:bg-black/80 bg-gray-100 p-5 shadow-md">
                         <h2 className="text-lg font-semibold mb-1">
                             AGH University of Science and Technology
                         </h2>
                         <div className="flex flex-row gap-5 items-start">
-                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0">
+                            <div className="w-18 h-18 bg-gray-50 rounded-lg flex items-center justify-center shrink-0">
                                 <img
                                     src="/logo-agh.svg"
                                     alt="AGH logo"
@@ -29,7 +29,7 @@ const Education = () => {
                                     <span className="font-normal">Undergraduate in Computer Science and Engineering (2023–Present)</span>
                                 </p>
 
-                                <p className="text-gray-400">
+                                <p className="dark:text-gray-400 text-gray-600">
                                     Coursework includes statistical data analysis, optimization methods, databases (SQL & NoSQL), algorithms, and object-oriented programming.
                                 </p>
                             </div>
@@ -39,10 +39,10 @@ const Education = () => {
                 </Reveal>
 
                 <Reveal delay={0.25}>
-                    <div className="flex flex-col bg-black/80 p-5 shadow-md">
+                    <div className="flex flex-col dark:bg-black/80 bg-gray-100 p-5 shadow-md">
                         <h2 className="text-lg font-semibold mb-1">Academic Projects</h2>
                         <div className="flex flex-row gap-5 items-start">
-                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0">
+                            <div className="w-18 h-18 dark:bg-black/50 bg-gray-50 rounded-lg flex items-center justify-center shrink-0">
                                 <img
                                     src="/mes.png"
                                     alt="MES logo"
@@ -53,7 +53,7 @@ const Education = () => {
                                 <p>
                                     <span className="font-normal">FEM Simulation</span>
                                 </p>
-                                <p className="text-gray-400">
+                                <p className="dark:text-gray-400 text-gray-600">
                                 Engineering-focused simulation solving a transient heat conduction problem with internal heat sources using the Finite Element Method.
                                 </p>
                             </div>
@@ -63,17 +63,17 @@ const Education = () => {
                 </Reveal>
 
                 <Reveal delay={0.3}>
-                    <div className="flex flex-col bg-black/80 p-5 shadow-md">
+                    <div className="flex flex-col dark:bg-black/80 bg-gray-100 p-5 shadow-md">
                         <h2 className="text-lg font-semibold mb-1">Member of Analytica Student Club at AGH</h2>
                         <div className="flex flex-row gap-5 items-start">
-                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-start justify-center shrink-0">
+                            <div className="w-18 h-18 dark:bg-black/50 bg-gray-50 rounded-lg flex items-start justify-center shrink-0">
                                 <img
                                     src="/analytica-logo.png"
                                     alt="hack-yeah logo"
-                                    className="object-contain w-full h-full rounded-lg brightness-0 invert"
+                                    className="object-contain w-full h-full rounded-lg brightness-0 dark:invert"
                                 />
                             </div>
-                            <p className="text-gray-400">
+                            <p className="dark:text-gray-400 text-gray-600">
                             Working on an NLP-based system for extracting geodetic parameters from user input to support <span className="whitespace-nowrap">land-plot</span> search. Focused on prompt design, structured argument extraction, data validation and guided interaction workflows.
                             </p>
                         </div>
@@ -82,10 +82,10 @@ const Education = () => {
                 </Reveal>
 
                 <Reveal delay={0.3}>
-                    <div className="flex flex-col bg-black/80 p-5 shadow-md">
+                    <div className="flex flex-col dark:bg-black/80 bg-gray-100 p-5 shadow-md">
                         <h2 className="text-lg font-semibold mb-1">Hackathons</h2>
                         <div className="flex flex-row gap-5 items-start">
-                            <div className="w-18 h-18 bg-black/50 rounded-lg flex items-center justify-center shrink-0 mt-2">
+                            <div className="w-18 h-18 dark:bg-black/50 bg-gray-50 rounded-lg flex items-center justify-center shrink-0 mt-2">
                                 <img
                                     src="/hack-yeah.jpg"
                                     alt="hack-yeah logo"
@@ -93,7 +93,7 @@ const Education = () => {
                                 />
                             </div>
 
-                            <p className="text-gray-400">
+                            <p className="dark:text-gray-400 text-gray-600">
                                 Participated in a four-person team at the
                                 <span className="font-bold"> HackYeah</span>
                                 {" "}hackathon, where we developed a retirement simulation system for the Polish Social Insurance Institution (ZUS).

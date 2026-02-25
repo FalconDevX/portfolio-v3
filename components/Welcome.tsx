@@ -65,7 +65,7 @@ const Welcome = () => {
                     </p>
 
 
-                    <div className='flex flex-row gap-3'>
+                    <div className='flex flex-row gap-1'>
                         <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className="text-gray-800 dark:text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
                             <MapPin strokeWidth={1.5} />
                         </a>

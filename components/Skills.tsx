@@ -22,7 +22,7 @@ const Skills = ({ visible }: { visible?: boolean }) => {
                 Skills
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600"></span>
             </h1>
-            <p className="text-gray-400 leading-relaxed mt-5 max-w-[90%] md:max-w-[70%] lg:max-w-[50%]">
+            <p className="text-gray-800 dark:text-gray-400 leading-relaxed mt-5 max-w-[90%] md:max-w-[70%] lg:max-w-[50%]">
                 Backend-focused developer experienced in Python (Django, FastAPI) with both SQL (MySQL) and NoSQL (MongoDB) databases. Familiar with React and TypeScript. Now shifting my career path toward data science and machine learning.
             </p>
             <motion.div
@@ -41,7 +41,7 @@ const Skills = ({ visible }: { visible?: boolean }) => {
                         }
                         transition={{ duration: 0.4, delay: i * 0.08 }}
                     >
-                        <Icon className="text-6xl" />
+                        <Icon className="text-6xl text-gray-800 dark:text-white" />
                     </motion.div>
                 ))}
             </motion.div>
