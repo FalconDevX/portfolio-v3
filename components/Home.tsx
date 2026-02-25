@@ -8,6 +8,7 @@ import TopProjects from "./TopProjects";
 import Education from "./Education";
 import { ArrowUp } from "lucide-react";
 import AboutMe from "./AboutMe";
+import DarkWhiteToggle from "./DarkWhiteToggle";
 
 export default function Home() {
     const [visible, setVisible] = useState(false);
@@ -28,7 +29,8 @@ export default function Home() {
     }
 
     return (
-        <div className="bg-transparent text-white ">
+        <div className="bg-transparent">
+            <DarkWhiteToggle />
             <Welcome />
 
             <Reveal delay={0.15}>{(visible) => <Skills visible={visible} />}</Reveal>

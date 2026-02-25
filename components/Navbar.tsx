@@ -6,7 +6,7 @@ const Navbar = () => {
     };
     
     return (
-        <div className='flex flex-row gap-4 text-white font-light cursor-pointer flex-wrap'>
+        <div className='flex flex-row gap-4 text-black dark:text-white font-light cursor-pointer flex-wrap'>
             <a onClick={() => scrollTo("skills")} className="transition-all duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">Skills</a>
             <a onClick={() => scrollTo("projects")} className="transition-all duration-300 hover:text-orange-400 hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.5)]">Projects</a>
             <a onClick={() => scrollTo("education")} className="transition-all duration-300 hover:text-red-400 hover:drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]">Education</a>

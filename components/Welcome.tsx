@@ -2,10 +2,14 @@
 import { Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import Navbar from './Navbar';
 import toast from "react-hot-toast";
+import { useTheme } from "next-themes";
 
 const Welcome = () => {
+
+    const { theme } = useTheme()
+    console.log(theme)
     return (
-        <section className="min-h-screen flex items-center justify-center bg-transparent text-white px-8">
+        <section className="min-h-screen flex items-center justify-center bg-transparent px-8">
             <div className="w-full flex flex-row justify-center gap-14">
                 {/* Left Side */}
                 <div className="hidden lg:flex justify-center p-0">
@@ -37,7 +41,7 @@ const Welcome = () => {
                                 </div>
 
                                 <h1 className="text-5xl font-light leading-tight">
-                                    Hi, I'm <span className="font-semibold text-white">Mateusz</span>
+                                    Hi, I'm <span className="font-semibold ">Mateusz</span>
                                 </h1>
 
                             </div>
@@ -56,17 +60,17 @@ const Welcome = () => {
 
 
 
-                    <p className="text-gray-400 max-w-md leading-relaxed wrap-break-words">
+                    <p className="text-gray-700 dark:text-gray-400 max-w-md leading-relaxed wrap-break-words">
                         Python developer building backend systems, AI tools and full-stack web applications. Working with FastAPI, Django and modern data libraries, with practical experience in ML, computer vision and LLM-based workflows.
                     </p>
 
 
                     <div className='flex flex-row gap-3'>
-                        <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className="text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+                        <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className="text-gray-800 dark:text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
                             <MapPin strokeWidth={1.5} />
                         </a>
                         <a href="https://www.google.com/search?q=krak%C3%B3w" target="_blank" className=" transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
-                            <h2 className='text-gray-300 hover:text-yellow-400'>Kraków</h2>
+                            <h2 className="text-gray-800 dark:text-gray-300 hover:text-yellow-400">Kraków</h2>
                         </a>
                     </div>
 
@@ -74,20 +78,20 @@ const Welcome = () => {
                         <a
                             href="https://github.com/FalconDevX"
                             target="_blank"
-                            className="text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-                        >
+                            className="text-gray-800 dark:text-gray-400 hover:text-yellow-400 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+                        >   
                             <Github stroke="none" fill="currentColor" strokeWidth={1.5} />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/mateusz-nowaczek-781779297/"
                             target="_blank"
-                            className="text-gray-400 hover:text-orange-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.5)]"
+                            className="text-gray-800 dark:text-gray-400 hover:text-orange-500 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.5)]"
                         >
                             <Linkedin strokeWidth={1.5} />
                         </a>
                         <a
                             href="#"
-                            className="text-gray-400 hover:text-pink-600 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(219,39,119,0.5)]"
+                            className="text-gray-800 dark:text-gray-400 hover:text-pink-600 transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(219,39,119,0.5)]"
                         >
                             <Mail
                                 strokeWidth={1.5}
@@ -109,12 +113,12 @@ const Welcome = () => {
                     </div>
                     <Navbar />
                     <button className="group relative w-50 h-12 rounded-md p-0.5 transition-all duration-500">
-                        <div className="absolute inset-0 rounded-md bg-gray-300 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 rounded-md bg-gray-500 dark:bg-white opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 
                         <div className="absolute inset-0 rounded-md bg-linear-to-r from-yellow-400 via-orange-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                        <div className="relative flex flex-row justify-center items-center text-gray-100 bg-[#0d0d0d] w-full h-full gap-3 cursor-pointer rounded-md">
-                            <Download className="text-gray-100" strokeWidth={1.5} />
+                        <div className="relative flex flex-row justify-center items-center text-black dark:text-gray-100 dark:bg-[#0d0d0d] bg-[#ffffff] w-full h-full gap-3 cursor-pointer rounded-md">
+                            <Download className="text-black dark:text-gray-100" strokeWidth={1.5} />
                             <a href="/Resume_Mateusz_Nowaczek.pdf" download>
                                 <span className="whitespace-nowrap">Grab My Resume</span>
                             </a>

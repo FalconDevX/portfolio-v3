@@ -4,6 +4,7 @@ import "./globals.css";
 import Dots from "@/components/Dots";
 import { Toaster } from 'react-hot-toast';
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Dots />
-        {children}
+        <ThemeProvider
+          attribute="class"
+        >
+          {children}
+        </ThemeProvider>
         <Toaster />
         <Analytics />
       </body>
