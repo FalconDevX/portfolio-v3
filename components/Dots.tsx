@@ -122,8 +122,8 @@ export default function Dots() {
                 if (d.y < 0) d.y = canvas.height;
                 if (d.y > canvas.height) d.y = 0;
 
-                ctx.fillStyle = isLight ? "rgba(0,0,0,0.7)" : d.color;
-                ctx.shadowColor = isLight ? "rgba(0,0,0,0.4)" : d.color;
+                ctx.fillStyle = isLight ? "rgba(128,128,128,0.7)" : d.color;
+                ctx.shadowColor = isLight ? "rgba(128,128,128,0.4)" : d.color;
                 ctx.beginPath();
                 ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
                 ctx.fill();
